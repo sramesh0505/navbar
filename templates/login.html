@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Login - My Website{% endblock %}
+
+{% block content %}
+<body>
+  {% block header %}{% endblock %}
+    {%include "loginstyle.html"%}
+    <div class="login-box">
+      <h1>Login</h1>
+      <form action="/login" method="post">
+        <label>Email</label>
+        <input type="email" name="email" placeholder="" />
+        <label>Password</label>
+        <input type="password" name="password" placeholder="" />
+        <input type="submit" value="Submit" />
+      </form>
+    </div>
+    <p class="para-2">
+      Don't have an account? <a href="{{ url_for('signup') }}">Sign Up Here</a>
+    </p>
+</body>
+{% endblock %}
+
+{% block user %}{{ username }}{% endblock %}
